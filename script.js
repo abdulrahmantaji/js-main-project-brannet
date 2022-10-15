@@ -34,7 +34,8 @@ const playRound = function (playerSelectionResult, computerResult) {
     return "drow";
   } else {
     //alert("you should type one of the following {ROCK PAPER SCISSORS}");
-    console.log("you should type one of the following {ROCK PAPER SCISSORS}");
+    //console.log("you should type one of the following {ROCK PAPER SCISSORS}");
+    return "wrong";
   }
 };
 
@@ -42,6 +43,7 @@ const playRound = function (playerSelectionResult, computerResult) {
 const game = function () {
   let playerScore = 0;
   let computerScore = 0;
+  let spamKeeper = 10;
   for (let i = 0; i < 5; i++) {
     //to determen the computer selection
     const computerResult = computerPlay(array).toUpperCase();
@@ -55,6 +57,12 @@ const game = function () {
       playRound(playerSelectionResult, computerResult) == "computer wins"
     ) {
       computerScore++;
+    } else if (playRound(playerSelectionResult, computerResult) == "wrong") {
+      i--;
+      spamKeeper--;
+      console.log("you should type one of the following {ROCK PAPER SCISSORS}");
+    } else if (spamKeeper == 0) {
+      i == 4;
     }
   }
   let drowScore = 5 - (playerScore + computerScore);
