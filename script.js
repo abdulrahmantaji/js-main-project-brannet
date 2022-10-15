@@ -61,8 +61,6 @@ const game = function () {
       i--;
       spamKeeper--;
       console.log("you should type one of the following {ROCK PAPER SCISSORS}");
-    } else if (spamKeeper == 0) {
-      i == 4;
     }
   }
   let drowScore = 5 - (playerScore + computerScore);
