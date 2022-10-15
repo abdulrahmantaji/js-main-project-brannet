@@ -12,7 +12,7 @@ const computerPlay = function (array) {
 };
 
 const playerSelection = function () {
-  let resp = window.prompt("choose Rock, paper, or Scissors ");
+  let resp = prompt("choose Rock, paper, or Scissors ");
   return resp;
 };
 
